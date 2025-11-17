@@ -1,0 +1,95 @@
+# ===============================
+# IMPORTANT: Sensitive Files
+# ===============================
+application.properties
+application.yml
+application-*.properties
+application-*.yml
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.crt
+*.csr
+keystore.p12
+keystore.jks
+
+# ===============================
+# Maven / Gradle Build & Output
+# ===============================
+/target/
+/build/
+/out/
+/*.jar
+*.war
+*.class
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/*.properties
+
+# ===============================
+# IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ===============================
+# Eclipse / Spring Tool Suite
+# ===============================
+.project
+.classpath
+.settings/
+.springBeans
+.apt_generated
+.sts4-cache/
+
+# ===============================
+# VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# OS-specific files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Logs & Temp Files
+# ===============================
+*.log
+logs/
+tmp/
+*.tmp
+hs_err_pid*
+
+# ===============================
+# Database Files
+# ===============================
+*.db
+*.sqlite
+*.mv.db
+*.h2.db
+
+# ===============================
+# Node (if you add frontend later)
+# ===============================
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# ===============================
+# Others
+# ===============================
+HELP.md
+
+# Prevent nested build directories
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
