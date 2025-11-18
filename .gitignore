@@ -1,13 +1,18 @@
-# ===============================
+# ================================
 # IMPORTANT: Sensitive Files
-# ===============================
+# ================================
+# Prevent ALL Spring Boot config files from being committed
 application.properties
 application.yml
 application-*.properties
 application-*.yml
+
+# Environment variables & secrets
 .env
 .env.*
 *.env
+
+# Credentials / Certificates
 *.key
 *.pem
 *.crt
@@ -15,31 +20,31 @@ application-*.yml
 keystore.p12
 keystore.jks
 
-# ===============================
-# Maven / Gradle Build & Output
-# ===============================
+# ================================
+# Maven / Build / Output
+# ================================
 /target/
 /build/
 /out/
-/*.jar
+*.jar
 *.war
 *.class
 
-# Maven Wrapper
+# Maven Wrapper files
 .mvn/wrapper/maven-wrapper.jar
 .mvn/wrapper/*.properties
 
-# ===============================
+# ================================
 # IntelliJ IDEA
-# ===============================
+# ================================
 .idea/
 *.iws
 *.iml
 *.ipr
 
-# ===============================
-# Eclipse / Spring Tool Suite
-# ===============================
+# ================================
+# Eclipse / STS
+# ================================
 .project
 .classpath
 .settings/
@@ -47,48 +52,50 @@ keystore.jks
 .apt_generated
 .sts4-cache/
 
-# ===============================
+# ================================
 # VS Code
-# ===============================
+# ================================
 .vscode/
 
-# ===============================
+# ================================
 # OS-specific files
-# ===============================
+# ================================
 .DS_Store
 Thumbs.db
 
-# ===============================
+# ================================
 # Logs & Temp Files
-# ===============================
+# ================================
 *.log
 logs/
 tmp/
 *.tmp
 hs_err_pid*
 
-# ===============================
+# ================================
 # Database Files
-# ===============================
+# ================================
 *.db
 *.sqlite
 *.mv.db
 *.h2.db
 
-# ===============================
-# Node (if you add frontend later)
-# ===============================
+# ================================
+# Node (If frontend added later)
+# ================================
 node_modules/
 dist/
 npm-debug.log
 yarn-error.log
 
-# ===============================
-# Others
-# ===============================
+# ================================
+# Project Misc
+# ================================
 HELP.md
 
-# Prevent nested build directories
+# ================================
+# Prevent nested build directories in test/main
+# ================================
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/src/main/**/build/
