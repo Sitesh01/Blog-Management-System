@@ -1,6 +1,7 @@
 package com.siteshkumar.bms.Service.Impl;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import com.siteshkumar.bms.DTO.CreatePostDTO;
 import com.siteshkumar.bms.DTO.PostDTO;
@@ -55,5 +56,29 @@ public class PostServiceImpl implements PostService{
 
         PostEntity saved = postRepository.save(post);
         return PostMapper.entityToDto(saved);
+    }
+
+    @Override
+    public void deletePost(Long postId){
+        PostEntity post = postRepository.findById(postId)
+                        .orElseThrow(() -> new RuntimeException("Post not found!!!"));
+
+        postRepository.delete(post);
+    }
+
+    @Override
+    public List<PostDTO> getAllPosts(){
+        List<PostEntity> postEntities = postRepository.findAll();
+
+        List<PostDTO> posts = postEntities.stream().map(PostMapper::entityToDto).toList();
+        return posts;
+    }
+
+    @Override
+    public PostDTO getPostById(Long postId){
+        PostEntity post = postRepository.findById(postId)
+                        .orElseThrow(() -> new RuntimeException("Post not found!!!"));
+
+        return PostMapper.entityToDto(post);
     }
 }

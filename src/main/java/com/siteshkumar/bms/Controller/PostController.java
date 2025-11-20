@@ -1,6 +1,9 @@
 package com.siteshkumar.bms.Controller;
 
+import java.util.List;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -33,5 +36,23 @@ public class PostController {
     public ResponseEntity<PostDTO> updatePost(@PathVariable Long postId, @Valid @RequestBody UpdatePostDTO dto){
         PostDTO updatedPost = postService.updatePost(postId, dto);
         return ResponseEntity.status(200).body(updatedPost);
+    }
+
+    @DeleteMapping("/delete/{postId}")
+    public ResponseEntity<String> deletePost(@PathVariable Long postId){
+        postService.deletePost(postId);
+        return ResponseEntity.ok("Post deleted successfully!!!");
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<PostDTO>> getAllPosts(){
+        List<PostDTO> posts = postService.getAllPosts();
+        return ResponseEntity.ok(posts);
+    }
+
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostDTO> getPostById(@PathVariable Long postId){
+        PostDTO foundPost = postService.getPostById(postId);
+        return ResponseEntity.ok(foundPost);
     }
 }
